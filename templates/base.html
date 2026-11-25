@@ -1,0 +1,4 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AlumniConnect</title></head><body>
+<nav><a href="/">AlumniConnect</a> | <a href="/login">Login</a> | <a href="/register">Register</a> | <a href="/directory">Directory</a> | <a href="/profile">Profile</a> | <a href="/requests">Requests</a> | <a href="/reports">Reports</a></nav>
+{% for message in get_flashed_messages() %}<p>{{ message }}</p>{% endfor %}
+{% block content %}{% endblock %}</body></html>
