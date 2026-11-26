@@ -1,4 +1,3 @@
-{% extends 'base.html' %}
-{% block content %}<h1>AlumniConnect</h1>
-{% if message %}<p>{{ message }}</p>{% endif %}
-<p>Starter template — Member 1 will replace this.</p>{% endblock %}
+{% extends 'base.html' %}{% block content %}
+<section class="hero"><p class="eyebrow">LEARN FROM EXPERIENCE</p><h1>Connect with alumni.<br>Shape your future.</h1><p>Discover mentors, explore career paths and request guidance from graduates who have been there before.</p><a class="button" href="/register">Get started</a> <a class="button outline" href="/login">Log in</a></section>
+<section class="grid"><article class="card"><h2>Discover</h2><p>Search by industry, expertise, role and graduation year.</p></article><article class="card"><h2>Connect</h2><p>Find alumni who have agreed to mentor students.</p></article><article class="card"><h2>Grow</h2><p>Send mentoring requests and follow their progress.</p></article></section>{% endblock %}

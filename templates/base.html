@@ -1,4 +1,10 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AlumniConnect</title></head><body>
-<nav><a href="/">AlumniConnect</a> | <a href="/login">Login</a> | <a href="/register">Register</a> | <a href="/directory">Directory</a> | <a href="/profile">Profile</a> | <a href="/requests">Requests</a> | <a href="/reports">Reports</a></nav>
-{% for message in get_flashed_messages() %}<p>{{ message }}</p>{% endfor %}
-{% block content %}{% endblock %}</body></html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AlumniConnect</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><header><nav><a class="brand" href="/">Alumni<span>Connect</span></a><div class="navlinks">
+{% if current_user %}
+{% if current_user.role == 'student' %}<a href="/directory">Directory</a>{% else %}<a href="/profile">My profile</a>{% endif %}
+<a href="/requests">Requests</a><a href="/reports">Reports</a><form method="post" action="/logout"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="outline">Log out</button></form>
+{% else %}<a href="/login">Log in</a><a class="button" href="/register">Join now</a>{% endif %}
+</div></nav></header><main>
+{% for message in get_flashed_messages() %}<p class="notice">{{ message }}</p>{% endfor %}
+{% block content %}{% endblock %}</main><footer>AlumniConnect · Student career mentoring project</footer></body></html>

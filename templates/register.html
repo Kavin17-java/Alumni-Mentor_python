@@ -1,4 +1,1 @@
-{% extends 'base.html' %}
-{% block content %}<h1>Register</h1>
-{% if message %}<p>{{ message }}</p>{% endif %}
-<p>Starter template — Member 1 will replace this.</p>{% endblock %}
+{% extends 'base.html' %}{% block content %}<section class="card narrow"><h1>Create an account</h1><form method="post" action="/register"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><label>Name<input name="name" required></label><label>Email<input name="email" type="email" required></label><label>Password<input name="password" type="password" minlength="8" required></label><label>I am a<select name="role"><option value="student">Student</option><option value="alumni">Alumni</option></select></label><button>Register</button></form></section>{% endblock %}

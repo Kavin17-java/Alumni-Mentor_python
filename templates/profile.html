@@ -1,4 +1,1 @@
-{% extends 'base.html' %}
-{% block content %}<h1>Profile</h1>
-{% if message %}<p>{{ message }}</p>{% endif %}
-<p>Starter template — Member 1 will replace this.</p>{% endblock %}
+{% extends 'base.html' %}{% block content %}<section class="card narrow"><h1>My alumni profile</h1><p>Choose whether your profile is visible to students.</p><form method="post" action="/profile"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><label>Industry<input name="industry" value="{{ profile.industry or '' }}" required></label><label>Expertise<input name="expertise" value="{{ profile.expertise or '' }}" required></label><label>Job role<input name="job_role" value="{{ profile.job_role or '' }}" required></label><label>Graduation year<input type="number" name="graduation_year" value="{{ profile.graduation_year or '' }}" min="1950" required></label><label class="check"><input type="checkbox" name="consent" value="1" {% if profile.consent %}checked{% endif %}> I agree to make my profile visible to students for mentoring.</label><button>Save profile</button></form></section>{% endblock %}
