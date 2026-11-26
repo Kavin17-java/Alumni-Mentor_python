@@ -14,9 +14,9 @@ python -m venv .venv
 Open http://127.0.0.1:5000. After the database branch is merged, run `.venv\Scripts\python.exe seed.py` to add fictional demo accounts. The initial starter is a preview only; all three feature PRs are needed for the final demo.
 
 ## Team contributions
-- Member 1: templates, CSS, frontend tests.
-- Member 2: Flask routes, permissions, backend tests.
-- Member 3: SQLite schema, database operations, seed and database tests.
+- templates, CSS, frontend tests.
+- Flask routes, permissions, backend tests.
+- SQLite schema, database operations, seed and database tests.
 
 Replace member labels with real names and add real PR links, screenshots, verified test results and deployment URL before submission. Record AI-assisted development and checks in each member's docs file.
 
